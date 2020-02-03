@@ -22,5 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-* La aplicacion no es funcional al momento de la primer entrega.
