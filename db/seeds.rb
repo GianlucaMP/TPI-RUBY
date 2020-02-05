@@ -15,3 +15,5 @@ Product.create(codigo_unico: 'ccc123456', descripcion: 'c', detalle: 'c')
 p1 = Product.first
 p1.items.create(price: 1)
 p1.items.create(price: 2)
+
+#Client.create(cuil_cuit: 'asdsad', nombre_rs: 'tche', email: 'z@z.com')

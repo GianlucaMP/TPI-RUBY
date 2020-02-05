@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user, :set_product, only: [:show, :update, :destroy, :index, :por_codigo, :stock, :add_items]
+  #before_action :authenticate_user, :set_product, only: [:show, :update, :destroy, :index, :por_codigo, :stock, :add_items]
   #before_action :authenticate_user, only: [:index, :por_codigo, :stock]
 
   # GET /products
@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   #GET productos/:codigo
   def por_codigo
-    #@product = Product.find_by(codigo_unico: params[:codigo])
+    @product = Product.find_by(codigo_unico: params[:codigo])
 
     render json: @product
   end
