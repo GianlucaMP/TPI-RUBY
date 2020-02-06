@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_121721) do
+ActiveRecord::Schema.define(version: 2020_02_05_223100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +19,20 @@ ActiveRecord::Schema.define(version: 2020_02_05_121721) do
     t.string "cuil_cuit"
     t.string "nombre_rs"
     t.string "email"
-    t.integer "condicion_iva"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "condicion_iva", default: 13
   end
 
   create_table "items", force: :cascade do |t|
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status"
+    t.integer "status", default: 0
+    t.bigint "product_id", null: false
+    t.bigint "reservation_id"
+    t.index ["product_id"], name: "index_items_on_product_id"
+    t.index ["reservation_id"], name: "index_items_on_reservation_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -42,6 +46,10 @@ ActiveRecord::Schema.define(version: 2020_02_05_121721) do
   create_table "reservations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "client_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["client_id"], name: "index_reservations_on_client_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,4 +60,8 @@ ActiveRecord::Schema.define(version: 2020_02_05_121721) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "items", "products"
+  add_foreign_key "items", "reservations"
+  add_foreign_key "reservations", "clients"
+  add_foreign_key "reservations", "users"
 end

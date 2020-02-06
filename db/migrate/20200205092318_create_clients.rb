@@ -4,9 +4,10 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :cuil_cuit
       t.string :nombre_rs
       t.string :email
-      t.integer :condicion_iva
 
       t.timestamps
     end
+
+    add_column :clients, :condicion_iva, :integer, default: 13
   end
 end
