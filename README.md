@@ -7,6 +7,6 @@ Trabajo incompleto. Paso a mencionar lo realizado y lo que falta:
 * Se puede autenticar usuario mediante JWT y restringir los servicios que se especifican adecuadamente, hecho con la gema knock
 * Se pueden solicitar todos los servicios concernientes a producto
 
-## Puntos críticos pendientes:
+## Puntos pendientes:
 * El sistema de ventas/reservas no llegue a desarrollarlo completamente.
 * No esta estandarizado a JSON:API
