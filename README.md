@@ -1,26 +1,12 @@
 # README
+Trabajo incompleto. Paso a mencionar lo realizado y lo que falta:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Cabe mencionar:
+* La integracion de las entidades del modelo la fui realizando segun avanzaba con los servicios solicitados
+* Estan hechos todos los modelos con sus respectivas asociaciones salvo las ventas
+* Se puede autenticar usuario mediante JWT y restringir los servicios que se especifican adecuadamente, hecho con la gema knock
+* Se pueden solicitar todos los servicios concernientes a producto
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-* La aplicacion no es funcional al momento de la primer entrega.
+## Puntos críticos pendientes:
+* El sistema de ventas/reservas no llegue a desarrollarlo completamente.
+* No esta estandarizado a JSON:API
